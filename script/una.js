@@ -96,10 +96,6 @@ class Una {
         builder += "]";
         return builder;
     }
-
-    // Implementar outros métodos da lista aqui:
-    // Inserir no final, inserir em ordem, remover no final,
-    // remover elementos por valor, buscar um elemento.
 }
 
 module.exports = Una;
