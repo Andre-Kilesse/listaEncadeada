@@ -8,19 +8,6 @@ class Una {
         this.totalElements = 0;
     }
 
-    // rotina para movimentar até o penultimo nó
-    getPenultimateNode() {
-        if (this.totalElements < 2) {
-            return null;
-        } else {
-            let currentNode = this.firstNode;
-            while (currentNode.getNext() !== this.lastNode) {
-                currentNode = currentNode.getNext();
-            }
-            return currentNode; 
-        }
-    }
-
     // insere novo nó no cmeço
     insertAtBeginning(value) {
         const newNode = new Node(value);
@@ -73,7 +60,7 @@ class Una {
             this.totalElements--;
             return aux;
         } else {
-            const penultimateNode = this.getPenultimateNode();
+            const penultimateNode = this._getPenultimateNode();
             let aux = this.lastNode;
             penultimateNode.setNext(null);
             this.lastNode = penultimateNode;
@@ -102,6 +89,19 @@ class Una {
 
         builder += "]";
         return builder;
+    }
+
+    // rotina para movimentar até o penultimo nó
+    _getPenultimateNode() {
+        if (this.totalElements < 2) {
+            return null;
+        } else {
+            let currentNode = this.firstNode;
+            while (currentNode.getNext() !== this.lastNode) {
+                currentNode = currentNode.getNext();
+            }
+            return currentNode; 
+        }
     }
 }
 
