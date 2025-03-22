@@ -1,12 +1,14 @@
 const Node = require('./node');
 
 class Una {
+    // construtor da lista, inicialmente vazio
     constructor() {
         this.firstNode = null;
         this.lastNode = null;
         this.totalElements = 0;
     }
 
+    // rotina para movimentar até o penultimo nó
     getPenultimateNode() {
         if (this.totalElements < 2) {
             return null;
@@ -19,6 +21,7 @@ class Una {
         }
     }
 
+    // insere novo nó no cmeço
     insertAtBeginning(value) {
         const newNode = new Node(value);
         if(this.firstNode == null){
@@ -32,6 +35,7 @@ class Una {
         this.totalElements++;
     }
 
+    // remove nó do começo
     removeAtBeginning() {
         if (this.totalElements == 0) {
             return null;
@@ -45,6 +49,7 @@ class Una {
         return aux;
     }
 
+    // insere novo nó ao final
     insertAtEnding(value) {
         const newNode = new Node(value);
         if(this.firstNode == null){
@@ -57,6 +62,7 @@ class Una {
         this.totalElements++;
     }
 
+    // remove nó do final
     removeAtEnding() {
         if (this.totalElements == 0) {
             return null;
@@ -77,6 +83,7 @@ class Una {
         
     }
 
+    // builder da lista
     toString() {
         if (this.totalElements === 0) {
             return "[ ]";
